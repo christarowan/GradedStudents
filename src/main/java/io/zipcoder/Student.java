@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class Student {
-
+public class Student implements Comparable<Student> {
+//found comparable interface explanation on Stack Overflow, trying it out
 
     private String firstName;
     private String lastName;
@@ -19,6 +19,10 @@ public class Student {
         this.examScores = new ArrayList<>(Arrays.asList(testScores));
     }
 
+    public int compareTo(Student other) {
+        return Double.compare(this.getAverageExamScore(),other.getAverageExamScore());
+    }
+    //found comparable interface explanation on Stack Overflow, trying it out
     public String getFirstName() {return firstName;}
 
     public String getLastName() {return lastName;}
